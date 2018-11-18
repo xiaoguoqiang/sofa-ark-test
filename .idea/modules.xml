@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app-one/app-one.iml" filepath="$PROJECT_DIR$/app-one/app-one.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instrument-agent/instrument-agent.iml" filepath="$PROJECT_DIR$/instrument-agent/instrument-agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instrumentagent.iml" filepath="$PROJECT_DIR$/instrumentagent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sofa-ark-sample.iml" filepath="$PROJECT_DIR$/sofa-ark-sample.iml" />
+    </modules>
+  </component>
+</project>

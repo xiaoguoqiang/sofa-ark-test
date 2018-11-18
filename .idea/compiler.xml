@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="app-one" />
+        <module name="instrument-agent" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app-one" target="1.7" />
+      <module name="biz-jvm-invocation-sample" target="1.7" />
+      <module name="instrument-agent" target="1.7" />
+      <module name="instrumentagent" target="1.7" />
+      <module name="sofa-ark-sample" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
