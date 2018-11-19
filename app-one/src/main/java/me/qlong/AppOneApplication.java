@@ -16,10 +16,7 @@
  */
 package me.qlong;
 
-import com.sun.tools.attach.AgentInitializationException;
-import com.sun.tools.attach.AgentLoadException;
-import com.sun.tools.attach.AttachNotSupportedException;
-import com.sun.tools.attach.VirtualMachine;
+import com.sun.tools.attach.*;
 import me.instrument.agent.Agent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -28,6 +25,7 @@ import java.io.File;
 import java.io.IOException;
 import java.security.CodeSource;
 import java.security.ProtectionDomain;
+import java.util.List;
 
 /**
  * @author qilong.zql 18/6/12-下午8:48
@@ -43,7 +41,16 @@ public class AppOneApplication {
 
         //attach
         VirtualMachine vm = null;
-        vm = VirtualMachine.attach("9730");//目标JVM的进程ID（PID）
+        List<VirtualMachineDescriptor> list = VirtualMachine.list();
+        for (VirtualMachineDescriptor vmd : list) {
+            if (vmd.displayName().equals("me.qlong.AppOneApplication")) {
+                //attach到当前JVM
+                vm = VirtualMachine.attach(vmd.id());
+                break;
+            }
+        }
+        //load agent jar
+        //这里由于ark以jar包的形式运行，无法load 单独agent jar
         vm.loadAgent(agentJarPath);
         vm.detach();
 
