@@ -37,7 +37,7 @@ public class AppOneApplication {
         //获取Agent的jar包路径
         ProtectionDomain agentDomain = Agent.class.getProtectionDomain();
         CodeSource codeSourde = agentDomain.getCodeSource();
-        String agentJarPath = new File(codeSourde.getLocation().getPath()).getAbsolutePath();
+        String agentJarPath = codeSourde.getLocation().getPath();
 
         //attach
         VirtualMachine vm = null;
